@@ -1,15 +1,21 @@
-import React, { Component } from 'react'
+import React, {useState} from 'react'
 
-export default class SearchBar extends Component {
-    state = {
-        term: ''
+export default function SearchBar() {
+    const [searchTerm, setSearchTerm] = useState('')
+
+    const handleSearchTerm =(event) => {
+        // console.log(searchTerm)
+        setSearchTerm(event.target.value)
     }
-    
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+
+    return (
+        <div>
+        {console.log("term ",searchTerm)}
+            <input
+                value={searchTerm}
+                name='searchTerm'
+                onChange={handleSearchTerm}
+            />
+        </div>
+    )
 }
